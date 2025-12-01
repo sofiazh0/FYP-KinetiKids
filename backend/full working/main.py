@@ -14,8 +14,8 @@ from pydantic import BaseModel
 import PyPDF2
 
 warnings.filterwarnings("ignore")
-API_KEY = "Bearer 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"
-pc_api_key = "62fd34a9-fb37-492c-a395-f2e1f39f350f"
+API_KEY = "YOUR_API_KEY"
+pc_api_key = "YOUR_API_KEY"
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 pc = Pinecone(api_key=pc_api_key)
 API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
