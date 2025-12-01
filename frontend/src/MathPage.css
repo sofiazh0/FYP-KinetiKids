@@ -1,0 +1,145 @@
+/* Math Page Layout */
+.math-page {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 8%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+
+.heading-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #f4b41a;
+    font-size: 1.6rem;
+}
+
+/* Grade Section */
+.grade-section {
+    margin: 40px 0;
+}
+
+.grade-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background-color: #2b6599;
+    display: inline-block;
+}
+
+/* Video Slider */
+.video-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    background: #91c5eb;
+    border-radius: 10px;
+    padding: 10px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+
+/* Video Card */
+.video-card {
+    flex: 0 0 auto;
+    width: 250px;
+    text-align: center;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+    background-color: #2b6599;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+.video-thumbnail {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.video-card h3 {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Custom Scrollbar */
+.video-slider::-webkit-scrollbar {
+    height: 10px;
+}
+
+.video-slider::-webkit-scrollbar-thumb {
+    background-color: #f4b41a;
+    border-radius: 10px;
+}
+
+.video-slider::-webkit-scrollbar-track {
+    background-color: #2b6599;
+    border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .video-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+    .video-card {
+        width: 80%;
+    }
+
+/* ==== VIDEO PLAYER MODAL STYLES ==== */
+
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.video-modal-content {
+  /* almost full-screen */
+  width: 95vw;
+  height: 85vh;
+
+  /* styling */
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-modal-content iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+
+.video-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #333;
+}
+}

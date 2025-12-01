@@ -1,0 +1,102 @@
+/* General Page Styling */
+.services-page {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7fbfe;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .services-container {
+    padding: 20px 5vw;
+  }
+  
+  /* Header Section */
+  .services-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .services-header h1 {
+    font-size: 2.5rem;
+    color: #f4b41a;
+    margin: 0;
+  }
+  
+  /* Main Content Section */
+  .services-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding-top: 30px;
+  }
+  
+  /* Left section with the image */
+  .services-image {
+    flex: 1;
+    max-width: 40%;
+  }
+  
+  .services-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Right section with the service cards */
+  .services-cards {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap; /* Wrap cards to ensure responsiveness */
+    margin-top: 160px;
+  }
+  
+  /* Individual service card styling (now buttons) */
+  .service-card {
+    flex: 1 1 calc(30% - 20px); /* Adjust width for three cards in a row */
+    max-width: calc(30% - 20px);
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Make it look like a button */
+    outline: none; /* Remove default focus outline */
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-card img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.2rem;
+    color: #2b6599;
+    margin-bottom: 10px;
+  }
+  
+  .service-card p {
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.5;
+  }
+  
+  /* Footer Styling */
+  .services-footer {
+    text-align: left;
+    margin-top: 20px;
+    padding: 10px 5vw;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+  }
+  

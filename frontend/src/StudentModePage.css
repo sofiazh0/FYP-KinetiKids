@@ -1,0 +1,506 @@
+/* Import the same playful fonts as landing page */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap");
+
+/* General Page Styling - Exactly like landing page */
+.student-mode-page {
+  font-family: "Quicksand", sans-serif;
+  background-color: #fffaf0; /* Same cream background as landing page */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background elements - Exactly same as landing page */
+.student-mode-page::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff9a8b, #ff6b6b);
+  top: -100px;
+  left: -50px;
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 20s ease-in-out infinite alternate;
+}
+
+.student-mode-page::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #4158d0, #c850c0);
+  bottom: -80px;
+  right: -80px;
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 15s ease-in-out infinite;
+}
+
+/* Additional background shapes - Same as landing page */
+.student-mode-deco1 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #0ccda3, #4cb8c4);
+  top: 60%;
+  left: 20%;
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 18s ease-in-out infinite alternate-reverse;
+}
+
+.student-mode-deco2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 140px solid #ffc75f;
+  top: 40%;
+  right: 15%;
+  opacity: 0.15;
+  z-index: 0;
+  animation: rotate 25s linear infinite;
+}
+
+.student-mode-page .shape-triangle2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid #5e60ce;
+  bottom: 15%;
+  left: 10%;
+  opacity: 0.15;
+  z-index: 0;
+  animation: rotate 20s linear infinite reverse;
+}
+
+.student-mode-page .shape-square1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #43aa8b;
+  top: 20%;
+  left: 15%;
+  transform: rotate(15deg);
+  opacity: 0.15;
+  z-index: 0;
+  animation: rotate 22s linear infinite;
+}
+
+.student-mode-page .shape-square2 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #f94144;
+  bottom: 30%;
+  right: 20%;
+  transform: rotate(30deg);
+  opacity: 0.15;
+  z-index: 0;
+  animation: rotate 18s linear infinite reverse;
+}
+
+/* Floating icons - similar to landing page */
+.floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 2rem;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1));
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.icon1 {
+  top: 20%;
+  left: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.icon2 {
+  top: 15%;
+  right: 10%;
+  animation: float 9s ease-in-out infinite 1s;
+}
+
+.icon3 {
+  bottom: 20%;
+  left: 15%;
+  animation: float 7.5s ease-in-out infinite 0.5s;
+}
+
+.icon4 {
+  top: 70%;
+  right: 25%;
+  animation: float 8.5s ease-in-out infinite 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Container for content - Landing page style */
+.student-mode-page .student-mode-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 120px 5vw 50px;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Student Mode Card - Landing page style */
+.student-mode-page .student-mode-left {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px 30px 30px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+  border-top: 8px solid #4158d0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.student-mode-page .student-mode-left:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Login/Signup Card - Landing page style */
+.student-mode-page .student-mode-right {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px 30px 30px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+  border-top: 8px solid #43aa8b;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.student-mode-page .student-mode-right:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling - For top-left placement */
+.student-mode-page .icon-container {
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  transform: none;
+  z-index: 3;
+  overflow: hidden;
+  margin: 0;
+}
+
+.student-mode-page .icon-container span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 2.9rem !important;
+  line-height: 1;
+}
+
+/* Card titles - adjust margin to account for icon */
+.student-mode-page .student-mode-left h2,
+.student-mode-page .student-mode-right h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.8rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center; /* Ensure title is centered if card text-align was changed */
+}
+
+.student-mode-page .student-mode-left h2 {
+  color: #4158d0;
+}
+
+.student-mode-page .student-mode-right h2 {
+  color: #43aa8b;
+}
+
+/* Card descriptions - Landing page style */
+.student-mode-page .student-mode-left p,
+.student-mode-page .student-mode-right p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Button container for proper alignment */
+.student-mode-page .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Buttons - Simple and clean like landing page cards */
+.student-mode-page .student-mode-button,
+.student-mode-page .student-access-login-button,
+.student-mode-page .student-access-signup-button {
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 16px 0;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(65, 88, 208, 0.08);
+  width: 90%;
+  max-width: 240px;
+  margin: 0 auto;
+  letter-spacing: 0.5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.student-mode-page .student-mode-button {
+  background: #f1f3fd;
+  color: #4158d0;
+}
+.student-mode-page .student-mode-button:hover {
+  background: #e0e7fa;
+}
+
+.student-mode-page .student-access-login-button {
+  background: #f3faf6;
+  color: #43aa8b;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(67, 170, 139, 0.08);
+  border-bottom: 6px solid #43aa8b;
+  padding: 18px 0 12px 0;
+  margin-bottom: 0;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.student-mode-page .student-access-login-button:hover {
+  background: #e0f3ea;
+  border-bottom: 6px solid #43aa8b;
+  transition: background 0.2s, border-bottom 0.2s, transform 0.15s,
+    box-shadow 0.2s;
+  box-shadow: 0 6px 18px rgba(67, 170, 139, 0.28);
+  transform: translateY(-2px);
+}
+
+.student-mode-page .student-access-signup-button {
+  background: #f3faf6;
+  color: #43aa8b;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-radius: 16px;
+  border: none;
+  border-bottom: 6px solid #43aa8b;
+  box-shadow: 0 2px 8px rgba(67, 170, 139, 0.08);
+  padding: 18px 0 12px 0;
+  margin-bottom: 0;
+  transition: box-shadow 0.2s, background 0.2s, border-bottom 0.2s;
+}
+.student-mode-page .student-access-signup-button:hover {
+  background: #e0f3ea;
+  box-shadow: 0 4px 16px rgba(67, 170, 139, 0.15);
+  border-bottom: 6px solid #379c77;
+}
+
+/* Prevent card hover when hovering buttons */
+.student-mode-page .student-mode-left:has(.student-mode-button:hover),
+.student-mode-page .student-mode-right:has(.student-access-login-button:hover),
+.student-mode-page
+  .student-mode-right:has(.student-access-signup-button:hover) {
+  transform: none;
+}
+
+/* Alternative approach for browsers that don't support :has() */
+.student-mode-page .button-container:hover ~ * {
+  pointer-events: none;
+}
+
+/* Guardian link styling - Remove underlines */
+.student-mode-page .student-mode-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.student-mode-page .guardian-link {
+  color: #43aa8b;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-bottom: none;
+}
+
+.student-mode-page .guardian-link:hover {
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+/* Option text - Remove underlines and fix spacing */
+.student-mode-page .option-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.student-mode-page .option-text.or-text {
+  margin: 0;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Remove any default text decorations */
+.student-mode-page .student-mode-left p,
+.student-mode-page .student-mode-right p,
+.student-mode-page .student-mode-text,
+.student-mode-page .option-text {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.student-mode-page .student-mode-left p::after,
+.student-mode-page .student-mode-right p::after,
+.student-mode-page .student-mode-text::after,
+.student-mode-page .option-text::after {
+  display: none;
+}
+
+/* Shine effect on cards - Same as landing page but less aggressive */
+.student-mode-page .student-mode-left::before,
+.student-mode-page .student-mode-right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.student-mode-page .student-mode-left:hover::before,
+.student-mode-page .student-mode-right:hover::before {
+  left: 125%;
+  transition: all 0.6s ease;
+}
+
+/* Responsive styles - Same as landing page */
+@media (max-width: 768px) {
+  .student-mode-page .student-mode-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 20px 50px;
+  }
+
+  .student-mode-page .student-mode-left,
+  .student-mode-page .student-mode-right {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-mode-page .student-mode-left,
+  .student-mode-page .student-mode-right {
+    padding: 20px;
+  }
+
+  .student-mode-page .icon-container {
+    width: 55px;
+    height: 55px;
+    top: -15px;
+    left: -10px;
+  }
+  .student-mode-page .icon-container span {
+    font-size: 1.9rem;
+  }
+
+  .student-mode-page .student-mode-left h2,
+  .student-mode-page .student-mode-right h2 {
+    margin-top: 60px;
+  }
+
+  .student-mode-page .floating-icon {
+    font-size: 1.5rem;
+  }
+}

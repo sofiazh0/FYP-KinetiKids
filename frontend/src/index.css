@@ -1,0 +1,59 @@
+/* Base Styles and Color Scheme */
+:root {
+  /* Primary Colors from Image */
+  --primary-orange: #ff6b45;
+  --primary-green: #5ac77c;
+  --primary-blue: #5da8e0;
+  --primary-yellow: #ffd74b;
+  --primary-purple: #772f87;
+
+  /* Text Colors */
+  --text-dark: #333333;
+  --text-light: #ffffff;
+
+  /* Background */
+  --background-cream: #fff8ed;
+
+  /* Accents */
+  --accent-pink: #ff7bac;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-cream);
+  color: var(--text-dark);
+}
+
+/* Modern button styling */
+.playful-button {
+  background-color: var(--primary-orange);
+  color: var(--text-light);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.playful-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card styling */
+.playful-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.playful-card:hover {
+  transform: translateY(-5px);
+}

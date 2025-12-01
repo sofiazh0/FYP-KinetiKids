@@ -1,0 +1,469 @@
+/* Overall Page Styling */
+.courses-page {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--background-cream);
+  min-height: 100vh;
+  padding: 120px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fun animated background */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes float-reverse {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(15px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Fun background decorations */
+.courses-page::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: var(--primary-yellow);
+  opacity: 0.1;
+  border-radius: 50%;
+  top: 10%;
+  left: -150px;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+.courses-page::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-color: var(--primary-green);
+  opacity: 0.1;
+  border-radius: 50%;
+  bottom: 5%;
+  right: -100px;
+  z-index: 0;
+  animation: float-reverse 9s ease-in-out infinite;
+}
+
+.courses-deco-1 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: var(--primary-blue);
+  opacity: 0.1;
+  border-radius: 50%;
+  top: 25%;
+  right: 10%;
+  z-index: 0;
+  animation: float 7s ease-in-out infinite;
+}
+
+.courses-deco-2 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-orange);
+  opacity: 0.1;
+  border-radius: 50%;
+  bottom: 15%;
+  left: 15%;
+  z-index: 0;
+  animation: float-reverse 6s ease-in-out infinite;
+}
+
+.courses-deco-3 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background-color: var(--primary-purple);
+  opacity: 0.1;
+  top: 40%;
+  left: 20%;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Page Header Styling */
+.courses-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.courses-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  animation: bounce 4s ease-in-out infinite;
+  position: relative;
+}
+
+.courses-title span {
+  color: var(--primary-orange);
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  background-color: var(--primary-yellow);
+  border-radius: 8px;
+  transform: rotate(-2deg);
+}
+
+.courses-title::after {
+  content: "🎓";
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  font-size: 2rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Fun subtitle */
+.courses-subtitle {
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+  max-width: 600px;
+  margin: 0 auto 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Course Cards Container */
+.courses-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual Course Card */
+.course-card {
+  width: 320px;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 6px solid white;
+}
+
+/* Card Color Variants */
+.course-card.green {
+  background-color: var(--primary-green);
+}
+
+.course-card.orange {
+  background-color: var(--primary-orange);
+}
+
+.course-card.blue {
+  background-color: var(--primary-blue);
+}
+
+/* Hover Effect */
+.course-card:hover {
+  transform: translateY(-15px) rotate(2deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Content */
+.card-content {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add playful background patterns */
+.card-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10,30 Q40,10 70,30 T90,30" stroke="white" stroke-width="2" fill="none" opacity="0.2" /></svg>');
+  background-size: 200px;
+  background-repeat: repeat;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* Fun decorative corner */
+.card-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card-corner::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-icon {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 25px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.5s ease;
+  animation: float 5s ease-in-out infinite;
+}
+
+.course-card:hover .course-icon {
+  transform: scale(1.15) rotate(10deg);
+}
+
+.course-card h2 {
+    color: white;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.course-description {
+    color: white;
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Button Styling */
+.course-button {
+  background-color: white;
+    border: none;
+  border-radius: 25px;
+  padding: 14px 30px;
+  font-size: 18px;
+  font-weight: 700;
+    cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.course-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+.course-button:hover::before {
+  left: 100%;
+}
+
+.green-button {
+  color: var(--primary-green);
+}
+
+.orange-button {
+  color: var(--primary-orange);
+}
+
+.blue-button {
+  color: var(--primary-blue);
+}
+
+.course-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Arrow Icon */
+.arrow-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  z-index: 3;
+}
+
+.course-card:hover .arrow-icon {
+  transform: translateX(5px) rotate(45deg);
+}
+
+/* Card corner decorations */
+.card-emoji {
+  position: absolute;
+  font-size: 24px;
+  z-index: 3;
+}
+
+.emoji-1 {
+  bottom: 15px;
+  left: 15px;
+  transform: rotate(-10deg);
+}
+
+.emoji-2 {
+  top: 15px;
+  left: 15px;
+  transform: rotate(10deg);
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .courses-container {
+    gap: 30px;
+  }
+  .course-card {
+    width: 300px;
+    height: 400px;
+  }
+  .courses-title {
+    font-size: 2.8rem;
+  }
+  .courses-title::after {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-title {
+    font-size: 2.4rem;
+  }
+  .courses-subtitle {
+    font-size: 1.1rem;
+  }
+  .courses-header {
+    margin-bottom: 40px;
+  }
+  .course-icon {
+    width: 120px;
+    height: 120px;
+  }
+  .course-card h2 {
+    font-size: 28px;
+  }
+  .course-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-page {
+    padding: 100px 15px 40px;
+  }
+  .courses-title {
+    font-size: 2rem;
+  }
+  .courses-title::after {
+    font-size: 1.4rem;
+    right: -5px;
+    top: -10px;
+  }
+  .courses-subtitle {
+    font-size: 1rem;
+  }
+  .course-card {
+    width: 100%;
+    max-width: 320px;
+    height: 380px;
+  }
+  .course-icon {
+    width: 100px;
+    height: 100px;
+  }
+  .course-card h2 {
+    font-size: 24px;
+  }
+  .course-description {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .course-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    }
+}

@@ -1,0 +1,312 @@
+/* General Styling */
+.video-questions-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f7fbfe;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 2%;
+}
+
+/* Main Content */
+.video-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8%;
+  overflow-y: scroll;
+  scrollbar-color: #2b6599 #f7fbfe;
+  scrollbar-width: thin;
+}
+
+.video-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.video-container::-webkit-scrollbar-thumb {
+  background-color: #2b6599;
+}
+
+.video-container::-webkit-scrollbar-track {
+  background-color: #f7fbfe;
+}
+
+/* Header Styling */
+.video-header {
+  font-size: 2.5rem;
+  color: #2b6599;
+  margin: 0;
+}
+
+.video-input-container, .video-form {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center;
+}
+
+/* Input Box at Bottom */
+.video-input-container {
+  display: flex;
+  position: sticky;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  align-items: center;
+  padding: 5px 12px;
+  background-color: #2b6599;
+  border-radius: 12px;
+  justify-content: space-between;
+}
+
+/* Adjust form elements to be aligned horizontally */
+.video-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  gap: 10px; /* Adds space between the form elements */
+}
+
+/* File Upload Section */
+.video-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.video-upload-label .upload-icon {
+  font-size: 1.5rem;
+}
+
+.video-file-input {
+  display: none;
+}
+
+/* Show the file name next to the icon when a file is selected */
+.video-upload-label .file-name {
+  color: white;
+  font-size: 1rem;
+  margin-left: 10px;
+  white-space: nowrap;
+  font-weight: 300;
+}
+
+/* Text Input Section */
+.video-textarea {
+  flex: 1;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 8px;  /* Added padding to match the desired look */
+  font-family: 'Montserrat', sans-serif;
+  resize: none;
+  min-height: 35px;  /* Adjusted height for the input box */
+}
+
+.video-textarea::placeholder {
+  color: #dfe5eb;
+  font-style: italic;  /* Making the placeholder text italic */
+}
+
+/* Submit Button */
+.video-submit-button {
+  background-color: #ffffff;
+  color: #2b6599;
+  border: none;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 8px;
+  /* margin-right: 10px; */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.video-submit-button:hover {
+  background-color: #f4b41a;
+  transform: scale(1.05);
+}
+/* Footer Styling */
+.video-footer {
+  text-align: left;
+  margin: 0%;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  padding: 10px 5vw;
+}
+
+/* Chat area styling */
+.vqa-chat-area {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  margin-top: 80px; /* Adjusted this value to prevent overlap */
+}
+
+/* Message bubbles */
+.vqa-message {
+  padding: 10px 20px;
+  margin: 10px auto;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 60%;
+  font-size: medium;
+  font-weight: 800;
+  /* align-items: center; */
+  position: relative; 
+  
+}
+
+/* Align user messages (blue) to the left */
+.vqa-message.user {
+  background-color: #2b6599;
+  align-self: flex-start;
+  text-align: left;
+  margin-left: 10%; /* Align with the purple line */
+  width: 40%; /* Ensure proper width based on text content */
+}
+
+/* Align bot response messages (yellow) to the right */
+.vqa-message.response {
+  background-color: #f4b41a;
+  align-self: flex-end;
+  text-align: right;
+  margin-right: 10%; /*Align with the orange line*/
+  color: black;
+  /* width: 50%; Ensure proper width based on text content */
+  max-width: 30%;
+}
+
+/* Speaker Button */
+.vqa-speak-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: -25px;
+  right: 10px;
+  transition: transform 0.2s ease;
+}
+
+.vqa-speak-button:hover {
+  transform: scale(1.2);
+}
+
+/* Floating New Chat Button */
+.vqa-new-chat-button {
+  position: fixed;
+  top: 110px;
+  left: 70px;
+  font-size: 1.5rem;
+  background-color: transparent; /* Transparent background */
+  color: #2b6599; /* Text color */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth transitions */
+  border-radius: 30%; /* Circular button */
+}
+
+/* Add background shade on hover */
+.vqa-new-chat-button:hover {
+  background-color: #2b6599; /* Subtle background shade */
+  color: white;
+  transform: scale(1.1); /* Button enlarges a little when hovered */
+}
+
+/* Remove focus outline */
+.vqa-new-chat-button:focus {
+  outline: none;
+}
+
+/* Chat History Modal */
+.vqa-chat-history-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  width: 400px;
+  max-height: 60vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Modal Button */
+.vqa-close-modal {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Chat History Scroll Area */
+.vqa-chat-history-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* History Item */
+.vqa-history-item {
+  background: #f7fbfe;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* History Item Hover Effect */
+.vqa-history-item:hover {
+  background-color: #dfe5eb;
+}
+
+/* Chat History Button - Positioning it to the right of Submit Button */
+.vqa-chat-history-button {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+  margin-left: 10px; 
+  transition: transform 0.2s ease;
+  position: relative;
+  top: 50%;
+  transform: translateY(-5%); 
+
+}
+
+.vqa-chat-history-button:hover::after {
+  content: " Chat History";
+  font-size: 0.8rem;
+  color: white;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* FadeIn Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

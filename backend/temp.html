@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chatbot with PDF Upload</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>RAG Chatbot with PDF Upload</h1>
+
+    <!-- File input for PDF upload -->
+    <div>
+        <label for="pdfFile">Upload PDF (optional):</label>
+        <input type="file" id="pdfFile" accept="application/pdf">
+    </div>
+
+    <!-- Input field for query -->
+    <div>
+        <label for="queryText">Enter your query:</label>
+        <input type="text" id="queryText" placeholder="Ask your question...">
+    </div>
+
+    <!-- Submit button -->
+    <button id="submitQuery">Submit Query</button>
+
+    <!-- Response container -->
+    <div id="responseContainer" class="response" style="display:none;">
+        <h3>Response:</h3>
+        <p id="responseText"></p>
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

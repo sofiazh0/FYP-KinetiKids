@@ -1,0 +1,17 @@
+numpy
+langchain
+langchain-huggingface
+nltk
+pinecone-client
+requests
+fastapi
+pydantic
+pydub
+PyPDF2
+huggingface-hub
+transformers
+datasets
+soundfile
+torch
+python-multipart
+pyarrow

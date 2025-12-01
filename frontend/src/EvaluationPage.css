@@ -1,0 +1,134 @@
+Ensure the same font styles as Home Page
+.evaluation-page {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease;
+    background-color: #f7fbfe;
+    
+}
+
+/* Container layout matches Home Page */
+.evaluation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 5vw 40px; 
+    /* Matches home page */
+    transition: transform 0.3s ease;
+}
+
+/* Left section (text) */
+.evaluation-left {
+    flex: 1;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Title font and size same as Home Page */
+.evaluation-title {
+    font-size: 50px;
+    font-weight: 800;
+    text-align: left;
+    color: #c94b4b; /* Evaluation theme color */
+    margin: 0;
+}
+
+/* Subtitle styling (same as home subtitle) */
+.evaluation-subtitle {
+    font-size: 15px;
+    font-weight: 800;
+    color: #2b6599;
+    text-align: left;
+    margin: 20px 0;
+    max-width: 500px;
+    letter-spacing: 1.1px;
+}
+
+.evaluation-buttons {
+    display: flex;
+    gap: 15px; /* Adds space between buttons */
+    margin-top: 20px;
+}
+
+/* Button styling (same padding, different color) */
+.evaluation-button {
+    background-color: #c94b4b; /* Red for evaluation */
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.evaluation-button:hover {
+    background-color: #a83c3c;
+}
+
+/* Instructions Button - Styled Similarly but Different Color */
+.instructions-button {
+    background-color: #2b6599; /* Blue for instructions */
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.instructions-button:hover {
+    background-color: #1e334d;
+}
+
+/* Right section (image) */
+.evaluation-right {
+    flex: 1;
+    text-align: right;
+}
+
+.evaluation-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer (same layout as Home Page) */
+.evaluation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5vw;
+    background-color: #f7fbfe;
+}
+
+.footer-social-icons a {
+    margin-left: 10px;
+    color: #2b6599;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    color: #c94b4b;
+}
+
+/* Responsive design (same breakpoints as Home Page) */
+@media (max-width: 768px) {
+    .evaluation-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .evaluation-right {
+        margin-top: 20px;
+    }
+}

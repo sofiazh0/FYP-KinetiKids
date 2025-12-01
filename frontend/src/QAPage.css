@@ -1,0 +1,317 @@
+/* General Styling */
+.qa-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-cream);
+  background-image: linear-gradient(to bottom right, rgba(255, 215, 75, 0.1), rgba(93, 168, 224, 0.1));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 2%;
+}
+
+/* Main Content */
+.qa-container {
+  flex: 1;
+  padding: 20px 5vw;
+  text-align: center;
+}
+
+.qa-header {
+  font-size: 2.5rem;
+  color: #2b6599;
+  margin: 0;
+}
+
+.qa-subheader {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 10px 0 20px;
+}
+
+.qa-input-container {
+  display: flex;
+  position: sticky;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  align-items: center;
+  padding: 12px 12px;
+  background-color: #2b6599;
+  border-radius: 12px;
+  justify-content: space-between;
+}
+
+.qa-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 10px;
+}
+
+/* Remove text, only show icon for upload */
+.qa-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.qa-upload-label .upload-icon {
+  font-size: 1.5rem;
+}
+
+.qa-file-input {
+  display: none;
+}
+
+/* Text area styling */
+.qa-textarea {
+  flex: 1;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 5px;
+  font-family: 'Montserrat', sans-serif;
+  resize: none;
+}
+
+.qa-textarea::placeholder {
+  color: #dfe5eb;
+}
+
+/* Submit Button */
+.qa-submit-button {
+  background-color: #ffffff;
+  color: #2b6599;
+  border: none;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.qa-submit-button:hover {
+  background-color: #f4b41a;
+  transform: scale(1.05);
+}
+
+.qa-footer {
+  text-align: left;
+  margin: 10px;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  padding: 10px 5vw;
+}
+
+.social-icons img {
+  width: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.qa-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8%;
+  overflow-y: scroll;
+  scrollbar-color: #2b6599 #f7fbfe;
+  scrollbar-width: thin;
+}
+
+.qa-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.qa-container::-webkit-scrollbar-thumb {
+  background-color: #2b6599;
+}
+
+.qa-container::-webkit-scrollbar-track {
+  background-color: #f7fbfe;
+}
+
+.chat-area {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Adjust message alignment to match the reference lines */
+.message {
+  padding: 10px 20px;
+  margin: 10px auto; /* Centering message */
+  border-radius: 10px;
+  color: #fff;
+  max-width: 60%; /* Adjust the width of the messages */
+  font-size: medium;
+  font-weight: 800;
+}
+
+/* Align user messages (blue) to the left, based on the purple reference line */
+.message.user {
+  background-color: #2b6599; /* Blue for user message */
+  align-self: flex-start; /* Align to the left */
+  text-align: left; /* Text on the left side */
+  margin-left: 5%; /* Align left with purple reference line */
+  position: relative;
+  max-width: 50%; /* Reduce the width for user message */
+}
+
+/* Align response messages (yellow) to the right, based on the orange reference line */
+.message.response {
+  background-color: #f4b41a; /* Yellow for response message */
+  align-self: flex-end; /* Align to the right */
+  text-align: right; /* Text on the right side */
+  margin-right: 4%; /* Align right with orange reference line */
+  color: black;
+  max-width: 40%; /* Reduce the width for response message */
+}
+
+
+.qa-speak-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: -50px;
+  right: 10px;
+  transition: transform 0.2s ease, background-color 0.3s ease; /* Added background-color transition */
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.qa-speak-button:hover {
+  /* background-color: rgba(43, 101, 153, 0.8); Add a background color on hover */
+  transform: scale(1.2); /* Button enlarges a little when hovered */
+}
+
+
+.chat-history-button {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+.chat-history-button:hover::after {
+  content: " Chat History";
+  font-size: 0.8rem;
+  color: white;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chat-history-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  width: 400px;
+  max-height: 60vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.history-message {
+  background: #f7fbfe;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  font-size: 1rem;
+  word-wrap: break-word;
+}
+
+/* Floating New Chat Button */
+.new-chat-button {
+  position: fixed;
+  top: 110px;
+  left: 70px;
+  font-size: 1.5rem;
+  background-color: transparent; /* Transparent background */
+  color: #2b6599; /* Text color */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth transitions */
+  border-radius: 30%; /* Circular button */
+}
+
+/* Add background shade on hover */
+.new-chat-button:hover {
+  background-color: #2b6599; /* Subtle background shade */
+  color: white;
+  transform: scale(1.1); /* Button enlarges a little when hovered */
+}
+
+/* Remove focus outline */
+.new-chat-button:focus {
+  outline: none;
+}
+
+/* Tooltip for New Chat Button */
+/* .new-chat-button:hover::after {
+  content: "New Chat";
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2b6599; 
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+} */
+
+.history-item {
+  background: #f7fbfe;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.history-item:hover {
+  background-color: #dfe5eb;
+}

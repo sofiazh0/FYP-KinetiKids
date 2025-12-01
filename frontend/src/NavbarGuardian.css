@@ -1,0 +1,160 @@
+/* Importing Montserrat font globally */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* General Guardian Navbar Styling */
+.guardian-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 13vh;
+  padding: 0 5vw;
+  background-color: #f7fbfe;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Logo Styling */
+.guardian-navbar-logo img {
+  height: 10vh;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+/* Menu icon */
+.guardian-menu-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px;
+  position: relative;
+  top: 2vh; /* Adjust to bring it down */
+}
+
+.guardian-menu-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #2b6599;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Open state for hamburger */
+.guardian-menu-bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.guardian-menu-bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.guardian-menu-bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Sidebar */
+.guardian-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #f7fbfe;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  flex-direction: column;
+  padding-top: 5%;
+}
+
+.guardian-sidebar.active {
+  transform: translateX(0);
+}
+
+/* Sidebar Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #2b6599;
+}
+
+.close-btn:hover {
+  color: #f4b41a;
+}
+
+.guardian-sidebar ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin-top: 40px; 
+}
+
+.guardian-sidebar ul li {
+  margin: 20px 0;
+}
+
+.guardian-sidebar ul li a {
+  color: #2b6599;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.guardian-sidebar ul li a:hover {
+  color: #f4b41a;
+}
+
+/* Navbar links */
+.guardian-nav-links {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+  flex-direction: row;
+  align-items: center;
+}
+
+.guardian-nav-links li {
+  margin-left: 20px;
+}
+
+.guardian-nav-links a {
+  color: #388e3c;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 8px 13px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+/* Hover effect */
+.guardian-nav-links a:hover {
+  color: white;
+  background-color: #388e3c; 
+  border-bottom: 2px solid white;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .guardian-sidebar {
+    left: -100%;
+    transition: left 0.3s ease;
+  }
+  .guardian-sidebar.active {
+    left: 0;
+  }
+  .guardian-menu-icon {
+    top: 1vh; /* Adjust position for smaller screens */
+  }
+}

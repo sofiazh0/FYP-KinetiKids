@@ -1,0 +1,113 @@
+/* General Guardian About Page Styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7fbfe;
+  }
+  
+  .guardian-about-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* About Container */
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 5vw;
+    margin-top: 50px; /* Add margin above the entire container */
+  }
+  
+  /* Text Section */
+  .about-text {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+    margin-top: 20px; /* Add top margin to the text */
+  }
+  
+  .about-text h1 {
+    font-size: 3rem;
+    font-weight: 2000;
+    color: #2b6599;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #4b6f89;
+  }
+  
+  /* Image Section */
+  .about-image {
+    flex: 1;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 18px; /* Add top margin to the image */
+  }
+  
+  .about-image img {
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum size of the image */
+    height: auto;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  }
+  
+  /* Footer */
+  .about-footer {
+    background-color: white;
+    color: #2b6599;
+    text-align: center;
+    padding: 20px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .about-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .footer-social-icons {
+    display: flex;
+  }
+  
+  .footer-social-icons a {
+    color: black;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-social-icons a:hover {
+    color: #2b6599;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 20px; /* Reduce top margin for smaller screens */
+    }
+  
+    .about-text {
+      max-width: 100%;
+      padding-right: 0;
+    }
+  
+    .about-image img {
+      max-width: 80%; /* Adjust the size of the image for smaller screens */
+    }
+  }
+  

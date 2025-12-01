@@ -1,0 +1,150 @@
+.quiz-page {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* ✅ Centers the quiz vertically */
+    height: 100vh;
+    background: #c94b4b;
+}
+
+/* Quiz Container */
+.quiz-container {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* ✅ Ensures centering in the viewport */
+    margin-bottom: auto;
+}
+
+/* Title */
+.quiz-title {
+    color: #2b6599;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Timer */
+.quiz-timer {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Question */
+.quiz-question h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Options */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.quiz-option-btn {
+    background: #2b6599;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-size: 15px;
+}
+
+.quiz-option-btn:hover {
+    background: #91c5eb;
+}
+
+.quiz-option-btn.selected {
+    background: #c94b4b;
+    color: #fff;
+}
+
+/* Navigation Buttons */
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.quiz-nav-btn {
+    background: #a83c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.quiz-nav-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Submit Button */
+.quiz-submit-btn {
+    background: #c94b4b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.quiz-submit-btn:hover {
+    background: #91c5eb;
+    color: #1e334d
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .quiz-container {
+        max-width: 90%;
+    }
+}
+
+/* Microphone Icon Styling */
+.qa-microphone-icon {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Optional Hover Effect */
+  .qa-microphone-icon:hover {
+    color: #f4b41a; /* Change to any color you prefer */
+    transform: scale(1.1); /* Slight zoom effect */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* When Recording */
+  .qa-microphone-icon.recording {
+    color: red; /* Change color to indicate recording */
+  }
+  

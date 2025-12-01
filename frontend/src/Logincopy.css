@@ -1,0 +1,640 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap");
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif; /* Apply default font here too */
+}
+
+/* Landing page background styling applied to login page */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.login-page {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f7fbfe;
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden; /* DEBUG: Restored */
+  /* border: 5px solid red !important; */ /* DEBUG: Removed */
+}
+
+/* Animated background elements (matching landing page exactly) */
+.login-animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.login-bg-circle1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #ff9a8b,
+    #ff6b6b
+  ); /* Reverted to original */
+  top: -100px;
+  left: -50px;
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 20s ease-in-out infinite alternate;
+}
+
+.login-bg-circle2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #4158d0,
+    #c850c0
+  ); /* Reverted to original */
+  bottom: -80px;
+  right: -80px;
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 15s ease-in-out infinite;
+}
+
+.login-bg-circle3 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #0ccda3,
+    #4cb8c4
+  ); /* Reverted to original */
+  top: 60%;
+  left: 20%;
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 18s ease-in-out infinite alternate-reverse;
+}
+
+/* Add triangles and squares like landing page */
+.login-bg-triangle1 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 140px solid #ffc75f; /* Reverted to original */
+  top: 40%;
+  right: 15%;
+  opacity: 0.15;
+  z-index: 0;
+  animation: rotate 25s linear infinite;
+}
+
+.login-bg-triangle2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid #5e60ce; /* Reverted to original */
+  bottom: 15%;
+  left: 10%;
+  opacity: 0.15;
+  z-index: 0;
+  animation: rotate 20s linear infinite reverse;
+}
+
+.login-bg-square1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #43aa8b; /* Reverted to original */
+  top: 20%;
+  left: 15%;
+  opacity: 0.15;
+  z-index: 0;
+  transform: rotate(15deg);
+  animation: rotate 22s linear infinite;
+}
+
+.login-bg-square2 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #f94144; /* Reverted to original */
+  bottom: 30%;
+  right: 20%;
+  opacity: 0.15;
+  z-index: 0;
+  transform: rotate(30deg);
+  animation: rotate 18s linear infinite reverse;
+}
+
+/* Floating icons like landing page */
+.login-floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.login-floating-icon {
+  position: absolute;
+  font-size: 2.5rem;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1));
+  z-index: 2;
+}
+
+.login-icon1 {
+  top: 20%;
+  left: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.login-icon2 {
+  top: 15%;
+  right: 15%;
+  animation: float 9s ease-in-out infinite 1s;
+}
+
+.login-icon3 {
+  bottom: 30%;
+  left: 35%;
+  animation: float 7.5s ease-in-out infinite 0.5s;
+}
+
+.login-icon4 {
+  top: 85%;
+  left: 82%;
+  animation: float 8.5s ease-in-out infinite 1.5s;
+}
+
+.login-icon5 {
+  top: 48%;
+  left: 88%;
+  animation: float 9.5s ease-in-out infinite 2s;
+}
+
+.login-icon6 {
+  top: 50%;
+  left: 15%;
+  animation: float 7s ease-in-out infinite 1s;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.login-card {
+  background: white;
+  border-radius: 20px;
+  border-top: 10px solid #ab47bc;
+  padding: 56px 36px 40px 36px;
+  width: 650px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: visible;
+  margin-top: 0;
+  margin-bottom: 0;
+  z-index: 10; /* Ensure login card is above floating icons */
+}
+
+.icon-container {
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  z-index: 10;
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: 18px;
+}
+.icon-container span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 2.9rem !important;
+  line-height: 1;
+}
+
+.login-title {
+  font-family: "Fredoka", cursive;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 38px;
+  margin-bottom: 48px;
+  color: #ab47bc !important;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.login-title span {
+  color: #ab47bc !important;
+}
+.login-title::after {
+  content: none;
+}
+.guardian-title-orange {
+  /* color: #ff8243; */
+}
+.guardian-title-purple {
+  /* color: #ab47bc; */
+}
+.guardian-title-green {
+  /* color: #43aa8b; */
+}
+
+.login-form {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 20px 0 0 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.login-row {
+  margin-bottom: 18px;
+}
+.login-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 22px 16px;
+  border-radius: 16px;
+  border: 1.5px solid #f7f3fa !important; /* Border color same as background for normal state */
+  font-size: 1rem;
+  background: #f7f3fa !important;
+  color: #333 !important;
+  box-shadow: 0 1px 4px rgba(171, 71, 188, 0.04);
+  transition: border 0.2s;
+  margin-bottom: 0;
+}
+.login-input:focus {
+  border: 1.5px solid #ab47bc !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(171, 71, 188, 0.15) !important;
+}
+.login-input:hover {
+  border: 1.5px solid #ab47bc !important;
+  box-shadow: none !important; /* Removed box-shadow on hover for a cleaner look */
+}
+.login-input::placeholder {
+  color: #7a7a7a !important;
+  opacity: 1;
+}
+
+/* Targeting the button element with its class within login-card */
+.login-card button.login-button,
+.login-card a.login-button /* Fallback if it's an <a> tag styled as a button */ {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 18px 0 0 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  background: #f7f3fa !important;
+  color: #ab47bc !important; /* Main purple text */
+  font-weight: 700;
+  font-size: 1.15rem;
+  border-radius: 16px;
+  border: none !important; /* Remove any other borders */
+  border-bottom: 6px solid #ab47bc !important; /* Main purple bottom border */
+  box-shadow: 0 2px 12px rgba(171, 71, 188, 0.08);
+  letter-spacing: 0.5px;
+  display: block;
+  text-align: center;
+  padding: 16px 0;
+  text-decoration: none !important; /* For <a> tags */
+  cursor: pointer !important; /* Ensure pointer cursor */
+  transition: background 0.2s, border-bottom 0.2s, box-shadow 0.2s,
+    transform 0.15s;
+}
+
+/* Targeting the hover state of the button element */
+.login-card button.login-button:hover,
+.login-card a.login-button:hover {
+  background: #ede0f3 !important;
+  border-bottom: 6px solid #7e379c !important; /* Darker purple border on hover */
+  box-shadow: 0 6px 18px rgba(171, 71, 188, 0.18);
+  color: #ab47bc !important; /* Main purple text on hover */
+  transform: translateY(-2px);
+}
+
+.login-text {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 38px;
+  text-align: center;
+}
+.login-card .login-text a,
+.login-card .login-text a:hover,
+.login-card .login-text a:focus,
+.login-card .login-text a:active {
+  text-decoration: none !important;
+  color: #ab47bc !important;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.login-card .login-text a:hover {
+  color: #7e379c !important;
+}
+.guardian-mode-text {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 15px;
+  text-align: center;
+}
+.student-link {
+  color: #ab47bc; /* Purple link */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-bottom: none;
+}
+.student-link:hover {
+  color: #7e379c; /* Darker purple on hover */
+  text-decoration: none;
+}
+.error-message {
+  color: #e74c3c;
+  margin-top: 15px;
+  font-weight: 500;
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.guardian-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 18px 0 10px 0;
+  font-size: 1rem;
+  color: #ab47bc;
+  justify-content: flex-start;
+}
+.guardian-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  accent-color: #ab47bc !important; /* Changed to purple */
+}
+.guardian-checkbox label {
+  color: #ab47bc !important;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    width: 100%;
+    padding: 30px 10px 20px 10px;
+    margin-top: 20px;
+  }
+  .icon-container {
+    width: 55px;
+    height: 55px;
+    top: -20px;
+    left: -10px;
+    margin-bottom: 10px;
+  }
+  .icon-container span {
+    font-size: 1.9rem;
+  }
+  .login-title {
+    font-size: 1.3rem;
+    margin-top: 28px;
+    margin-bottom: 12px;
+  }
+  .login-input {
+    padding: 13px;
+    font-size: 0.95rem;
+  }
+  .login-button {
+    font-size: 1rem;
+    padding: 13px 0;
+  }
+}
+
+.navbar {
+  z-index: 100;
+  position: relative;
+}
+
+/* --- START Logincopy Page Specific Background Styles (Mirroring Landing Page) --- */
+
+.logincopy-animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; /* Stretch to right edge */
+  bottom: 0; /* Stretch to bottom edge */
+  z-index: 0; /* Behind login card, but parent for shapes */
+  overflow: hidden;
+  background-color: transparent; /* Allow .login-page background to show */
+}
+
+.logincopy-bg-circle1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #ff9a8b,
+    #ff6b6b
+  ); /* Restored intended color */
+  top: -100px;
+  left: -50px;
+  opacity: 0.15; /* Restored intended opacity */
+  z-index: 0;
+  animation: float 20s ease-in-out infinite alternate;
+}
+
+.logincopy-bg-circle2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #4158d0,
+    #c850c0
+  ); /* Restored intended color */
+  bottom: -80px;
+  right: -80px;
+  opacity: 0.15; /* Restored intended opacity */
+  z-index: 0;
+  animation: float 15s ease-in-out infinite;
+}
+
+.logincopy-bg-circle3 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #0ccda3,
+    #4cb8c4
+  ); /* Restored intended color */
+  top: 60%;
+  left: 20%;
+  opacity: 0.15; /* Restored intended opacity */
+  z-index: 0;
+  animation: float 18s ease-in-out infinite alternate-reverse;
+}
+
+.logincopy-bg-triangle1 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 140px solid #ffc75f; /* Restored intended Yellow */
+  top: 40%;
+  right: 15%;
+  opacity: 0.15; /* Restored intended opacity */
+  z-index: 0;
+  animation: rotate 25s linear infinite;
+}
+
+.logincopy-bg-triangle2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid #5e60ce; /* Restored intended color */
+  bottom: 15%;
+  left: 10%;
+  opacity: 0.15; /* Restored intended opacity */
+  z-index: 0;
+  animation: rotate 20s linear infinite reverse;
+}
+
+.logincopy-bg-square1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #43aa8b; /* Restored intended color */
+  top: 20%;
+  left: 15%;
+  opacity: 0.15; /* Restored intended opacity */
+  z-index: 0;
+  transform: rotate(15deg);
+  animation: rotate 22s linear infinite;
+}
+
+.logincopy-bg-square2 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #f94144; /* Restored intended color */
+  bottom: 30%;
+  right: 20%;
+  opacity: 0.15; /* Restored intended opacity */
+  z-index: 0;
+  transform: rotate(30deg);
+  animation: rotate 18s linear infinite reverse;
+}
+
+.logincopy-floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* Above shapes, below login card */
+}
+
+.logincopy-floating-icon {
+  position: absolute;
+  font-size: 2.5rem;
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1));
+  z-index: 2; /* Ensures icons are above their container if needed, but parent z-index is key */
+}
+
+.logincopy-icon1 {
+  top: 20%;
+  left: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.logincopy-icon2 {
+  top: 15%;
+  right: 15%;
+  animation: float 9s ease-in-out infinite 1s;
+}
+
+.logincopy-icon3 {
+  bottom: 30%;
+  left: 35%;
+  animation: float 7.5s ease-in-out infinite 0.5s;
+}
+
+.logincopy-icon4 {
+  top: 85%;
+  left: 82%;
+  animation: float 8.5s ease-in-out infinite 1.5s;
+}
+
+.logincopy-icon5 {
+  top: 48%;
+  left: 88%;
+  animation: float 9.5s ease-in-out infinite 2s;
+}
+
+.logincopy-icon6 {
+  top: 50%;
+  left: 15%;
+  animation: float 7s ease-in-out infinite 1s;
+}
+/* --- END Logincopy Page Specific Background Styles --- */

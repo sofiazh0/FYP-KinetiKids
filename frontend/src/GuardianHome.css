@@ -1,0 +1,207 @@
+/* Import Google Font for Guardian Mode */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Global Styling */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  margin-top: 80px;
+  background-color: #f7fbfe;
+}
+
+/* Guardian Home Container */
+.guardian-home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main Section */
+.guardian-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 100px 5vw 40px;
+}
+
+/* Left Section */
+.guardian-left {
+  flex: 1;
+  padding-right: 20px;
+  margin-top: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.guardian-title {
+  font-size: 50px;
+  font-weight: 5000;
+  text-align: left;
+  color: #2b6599;
+  padding-right: 10px;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.guardian-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4b6f89;
+  text-align: left;
+  margin: 20px 0;
+  max-width: 500px;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* CTA Button */
+.guardian-button {
+  background-color: #388e3c;
+  color: white;
+  text-align: left;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.guardian-button:hover {
+  background-color: #2f7a32;
+  transform: scale(1.05);
+}
+
+/* Right Section */
+.guardian-right {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guardian-image {
+  max-width: 100%;
+  margin-top: 40px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Footer */
+.guardian-footer {
+  background-color: #2b6599;
+  color: white;
+  text-align: center;
+  padding: 20px 5vw;
+}
+
+.guardian-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-social-icons {
+  margin-top: 10px;
+}
+
+.footer-social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  color: #f4b41a;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #f7fbfe;
+  transform: translateX(-250px);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  color: #2b6599;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  color: #f4b41a;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #2b6599;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #f4b41a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .guardian-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5vw;
+  }
+
+  .guardian-left {
+    margin-bottom: 30px;
+  }
+
+  .guardian-title {
+    font-size: 2.5rem;
+  }
+
+  .guardian-subtitle {
+    font-size: 1rem;
+  }
+
+  .guardian-button {
+    padding: 10px 20px;
+  }
+
+  .guardian-image {
+    width: 80%;
+    max-width: 300px;
+  }
+}

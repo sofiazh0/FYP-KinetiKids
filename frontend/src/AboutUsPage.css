@@ -1,0 +1,159 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400&display=swap');
+
+/* General Page Styling */
+.about-us-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7fbfe;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Container */
+.about-us-container {
+    display: flex;
+    flex-direction: row; /* Ensure image stays on left and text on right */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5vw;
+    gap: 50px;
+    flex: 1;
+}
+
+/* Left Section - Image Grid */
+.about-images {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Keep images aligned to the left */
+    align-items: center;
+    max-width: 40%;
+}
+
+/* Image Grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: 450px;
+    height: 400px;
+}
+
+/* Individual Cropped Image Boxes */
+.image-box {
+    width: 100%;
+    height: 100%;
+    background-image: url("./assets/student-about-us.png");
+    background-size: 200% 200%;
+    border-radius: 8px;
+}
+
+/* Positioning Each Image */
+.img-1 { background-position: 0% 0%; }   /* Top Left */
+.img-2 { background-position: 100% 0%; } /* Top Right */
+.img-3 { background-position: 0% 100%; } /* Bottom Left */
+.img-4 { background-position: 100% 100%; } /* Bottom Right */
+
+/* Right Section - Text */
+.about-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensure text remains centered vertically */
+    align-items: flex-start;
+}
+
+/* About Us Title */
+.about-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f4b41a;
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+.about-text p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+/* Footer */
+.about-footer {
+    text-align: left;
+    padding: 20px 5vw;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+    margin-top: auto;
+}
+
+/* ✅ Fix for ensuring text stays on the right on all screen sizes */
+@media (max-width: 1024px) {
+    .about-us-container {
+        flex-direction: row; /* Keep it side by side for large screens */
+        align-items: center;
+        text-align: left;
+    }
+
+    .about-images {
+        max-width: 40%;
+    }
+
+    .about-text {
+        max-width: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-images, .about-text {
+        max-width: 85%;
+    }
+
+    .about-text {
+        text-align: center;
+        align-items: center;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 280px;
+        height: auto;
+    }
+
+    .about-title {
+        font-size: 2.5rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+        width: 200px;
+    }
+}

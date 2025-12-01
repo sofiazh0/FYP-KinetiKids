@@ -1,0 +1,691 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap");
+
+/* General Styling */
+.login-container {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fffaf0;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; /* Prevent double scroll bars */
+  padding-top: calc(13vh + 60px); /* Increase spacing below navbar to 120px */
+}
+
+/* Force navbar to be visible with important declarations */
+.login-container .navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  background-color: white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  width: 100% !important;
+  height: 13vh !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 2vw !important;
+}
+
+/* Ensure logo is visible */
+.login-container .navbar .navbar-logo {
+  order: 1 !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.login-container .navbar .navbar-logo img {
+  height: 8vh !important;
+  max-width: 150px !important;
+  object-fit: contain !important;
+}
+
+/* Ensure menu icon is visible */
+.login-container .navbar .menu-icon {
+  order: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  cursor: pointer !important;
+}
+
+.login-container .navbar .menu-bar {
+  width: 25px !important;
+  height: 3px !important;
+  background-color: #2b6599 !important;
+  margin: 4px 0 !important;
+}
+
+/* Main content area below navbar */
+.login-content-area {
+  flex: 1;
+  position: relative;
+  overflow: visible; /* Allow content to be visible */
+}
+
+/* Animated background elements - positioned relative to content area */
+.login-container::before {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff9a8b, #ff6b6b);
+  top: 30px; /* Moved up from 50px */
+  left: -50px;
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 20s ease-in-out infinite alternate;
+}
+
+.login-container::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #4158d0, #c850c0);
+  bottom: -80px;
+  right: -80px;
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 15s ease-in-out infinite;
+}
+
+.login-deco1 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #0ccda3, #4cb8c4);
+  top: calc(60% + 100px); /* Adjusted for navbar */
+  left: 20%;
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 18s ease-in-out infinite alternate-reverse;
+}
+
+.login-deco2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 140px solid #ffc75f;
+  top: calc(40% + 100px); /* Adjusted for navbar */
+  right: 15%;
+  opacity: 0.15;
+  z-index: 0;
+  animation: rotate 25s linear infinite;
+}
+
+.login-deco3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #43aa8b;
+  top: calc(20% + 100px); /* Adjusted for navbar */
+  left: 15%;
+  opacity: 0.15;
+  z-index: 0;
+  transform: rotate(15deg);
+  animation: rotate 22s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Center the login content */
+.login-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(
+    100vh - 13vh - 120px
+  ); /* Account for navbar height and more spacing */
+  width: 100%;
+  flex: 1;
+  padding: 40px 20px; /* Increase top/bottom padding */
+  box-sizing: border-box;
+  overflow: visible;
+  margin-top: 60px; /* Increase top margin from 40px to 60px */
+}
+
+/* Hide the right side panel to match single card design */
+.signup-left {
+  display: none;
+}
+
+/* Login card styling - blue theme */
+.login-box {
+  font-family: "Quicksand", sans-serif;
+  background: white;
+  border-radius: 20px;
+  padding: 56px 36px 40px 36px;
+  width: 650px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: visible;
+  border-top: 8px solid #4158d0; /* Student Signup blue */
+  margin-top: 40px;
+  margin-bottom: 48px;
+  z-index: 10;
+}
+
+/* Icon container */
+.icon-container.login-icon {
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  z-index: 3;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Login title - blue theme */
+.login-box h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.8rem;
+  margin-top: 38px;
+  margin-bottom: 18px;
+  color: #4158d0; /* Student Signup blue */
+}
+
+/* Form styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 0 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Input groups - ULTRA SPECIFIC to override everything */
+div.input-group,
+.input-group,
+.login-form .input-group,
+.login-container .input-group,
+.login-box .input-group {
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  background: #f4f6fe !important; /* Light blue background like button */
+  background-color: #f4f6fe !important;
+  border-radius: 12px !important;
+  border: 2px solid #e8eaed !important; /* Light gray border for regular state */
+  transition: all 0.3s ease !important;
+  margin-bottom: 20px !important;
+}
+
+div.input-group:focus-within,
+.input-group:focus-within,
+.login-form .input-group:focus-within,
+.login-container .input-group:focus-within,
+.login-box .input-group:focus-within {
+  border: 2px solid #4158d0 !important; /* Student Signup blue on focus */
+  box-shadow: 0 0 0 3px rgba(65, 88, 208, 0.1) !important; /* Student Signup blue glow */
+  background: #ffffff !important; /* White background on focus */
+  background-color: #ffffff !important;
+  outline: none !important;
+}
+
+div.input-group:hover,
+.input-group:hover,
+.login-form .input-group:hover,
+.login-container .input-group:hover,
+.login-box .input-group:hover {
+  border: 2px solid #4158d0 !important; /* Student Signup blue on hover */
+  background: #ffffff !important; /* White background on hover */
+  background-color: #ffffff !important;
+}
+
+.login-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 20px; /* Consistent with Guardian Signup */
+  border: none !important;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: transparent;
+  color: #333;
+  outline: none !important;
+  box-shadow: none !important;
+  font-family: inherit;
+}
+
+.login-input:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.login-input:hover {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove any webkit/moz specific styling that might cause purple */
+.login-input::-webkit-input-placeholder {
+  color: #5f6368;
+}
+.login-input::-moz-placeholder {
+  color: #5f6368;
+  opacity: 1;
+}
+.login-input:-ms-input-placeholder {
+  color: #5f6368;
+}
+.login-input:-moz-placeholder {
+  color: #5f6368;
+  opacity: 1;
+}
+
+.login-input::placeholder {
+  color: #5f6368 !important;
+  opacity: 1;
+}
+
+/* Guardian checkbox - Student Signup blue theme */
+.guardian-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 10px 0; /* Match input spacing */
+  font-size: 1rem;
+  color: #4158d0; /* Student Signup blue */
+  justify-content: flex-start;
+}
+
+.guardian-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  accent-color: #4158d0 !important; /* Student Signup blue */
+}
+
+.guardian-checkbox label {
+  color: #4158d0 !important; /* Student Signup blue */
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* Login button - ULTRA SPECIFIC to override everything */
+button.login-button,
+.login-button,
+.login-container button[type="submit"],
+.login-form button {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 18px 0 0 0 !important;
+  padding: 20px 0 14px 0 !important;
+  background: #f4f6fe !important;
+  background-color: #f4f6fe !important;
+  color: #4158d0 !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  border-radius: 16px !important;
+  border: none !important;
+  border-bottom: 6px solid #4158d0 !important;
+  box-shadow: 0 2px 12px rgba(65, 88, 208, 0.08) !important;
+  letter-spacing: 0.5px !important;
+  display: block !important;
+  text-align: center !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+button.login-button:hover,
+.login-button:hover,
+.login-container button[type="submit"]:hover,
+.login-form button:hover {
+  background: #e0e7fa !important;
+  background-color: #e0e7fa !important;
+  border-bottom: 6px solid #4158d0 !important;
+  box-shadow: 0 6px 18px rgba(65, 88, 208, 0.18) !important;
+  color: #4158d0 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Text links - Student Signup blue theme */
+.login-text-next {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 38px;
+  text-align: center;
+}
+
+.guardian-link-next {
+  color: #4158d0; /* Student Signup blue */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.guardian-link-next:hover {
+  color: #3146b3; /* Darker Student Signup blue on hover */
+  text-decoration: none;
+}
+
+/* Error message */
+.error-message {
+  color: #e74c3c;
+  margin-top: 15px;
+  font-weight: 500;
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Remove margin from last input group */
+.input-group:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .login-box {
+    width: 100%;
+    padding: 30px 20px 20px 20px;
+    margin-top: 20px;
+  }
+
+  .icon-container.login-icon {
+    width: 55px;
+    height: 55px;
+    top: -20px;
+    left: -10px;
+  }
+
+  .login-box h2 {
+    font-size: 1.3rem;
+    margin-top: 28px;
+    margin-bottom: 12px;
+  }
+
+  .login-input {
+    padding: 13px;
+    font-size: 0.95rem;
+  }
+
+  .login-button {
+    font-size: 1rem;
+    padding: 13px 0;
+  }
+}
+
+/* NUCLEAR OVERRIDE - Force the light blue background no matter what */
+.login-container .login-left .login-box .login-form div.input-group,
+.login-container .login-left .login-box .login-form .input-group,
+div.login-container .login-left .login-box .login-form div.input-group,
+html body .login-container .login-left .login-box .login-form div.input-group,
+html body div.login-container .login-left .login-box .login-form .input-group {
+  background: #f4f6fe !important;
+  background-color: #f4f6fe !important;
+  border: 2px solid #e8eaed !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 20px !important;
+  z-index: 9999 !important;
+}
+
+.login-container
+  .login-left
+  .login-box
+  .login-form
+  div.input-group:focus-within,
+.login-container .login-left .login-box .login-form .input-group:focus-within,
+div.login-container
+  .login-left
+  .login-box
+  .login-form
+  div.input-group:focus-within,
+html
+  body
+  .login-container
+  .login-left
+  .login-box
+  .login-form
+  div.input-group:focus-within,
+html
+  body
+  div.login-container
+  .login-left
+  .login-box
+  .login-form
+  .input-group:focus-within {
+  border: 2px solid #4158d0 !important;
+  box-shadow: 0 0 0 3px rgba(65, 88, 208, 0.1) !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  outline: none !important;
+}
+
+.login-container .login-left .login-box .login-form div.input-group:hover,
+.login-container .login-left .login-box .login-form .input-group:hover,
+div.login-container .login-left .login-box .login-form div.input-group:hover,
+html
+  body
+  .login-container
+  .login-left
+  .login-box
+  .login-form
+  div.input-group:hover,
+html
+  body
+  div.login-container
+  .login-left
+  .login-box
+  .login-form
+  .input-group:hover {
+  border: 2px solid #4158d0 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Force input inside to be transparent */
+.login-container
+  .login-left
+  .login-box
+  .login-form
+  div.input-group
+  input.login-input,
+.login-container
+  .login-left
+  .login-box
+  .login-form
+  .input-group
+  input.login-input,
+div.login-container
+  .login-left
+  .login-box
+  .login-form
+  div.input-group
+  input.login-input,
+html
+  body
+  .login-container
+  .login-left
+  .login-box
+  .login-form
+  div.input-group
+  input.login-input,
+html
+  body
+  div.login-container
+  .login-left
+  .login-box
+  .login-form
+  .input-group
+  input.login-input {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  padding: 16px 20px !important;
+  border-radius: 12px !important;
+  font-size: 1rem !important;
+  color: #333 !important;
+  font-family: inherit !important;
+}
+
+/* FINAL NUCLEAR OPTION - Use attribute selectors for maximum specificity */
+form.login-form-override-215418 div[class*="input-group"],
+form.login-form-override-215418 .input-group,
+.login-form-override-215418 div[class*="input-group"],
+.login-form-override-215418 .input-group {
+  background: #f4f6fe !important;
+  background-color: #f4f6fe !important;
+  border: 2px solid #e8eaed !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 20px !important;
+  z-index: 999999 !important;
+  box-sizing: border-box !important;
+}
+
+form.login-form-override-215418 div[class*="input-group"]:focus-within,
+form.login-form-override-215418 .input-group:focus-within,
+.login-form-override-215418 div[class*="input-group"]:focus-within,
+.login-form-override-215418 .input-group:focus-within {
+  border: 2px solid #4158d0 !important;
+  box-shadow: 0 0 0 3px rgba(65, 88, 208, 0.1) !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  outline: none !important;
+}
+
+form.login-form-override-215418 div[class*="input-group"]:hover,
+form.login-form-override-215418 .input-group:hover,
+.login-form-override-215418 div[class*="input-group"]:hover,
+.login-form-override-215418 .input-group:hover {
+  border: 2px solid #4158d0 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Floating Emoji Icons - Login Page Specific */
+.login-floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5; /* Increased from 1 */
+}
+
+.login-floating-icon {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.8; /* Increased from 0.7 */
+  animation: loginFloatIcon 8s ease-in-out infinite;
+  user-select: none;
+  z-index: 5; /* Added explicit z-index */
+}
+
+.login-floating-icon.login-icon1 {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+  animation-duration: 10s;
+}
+
+.login-floating-icon.login-icon2 {
+  top: 30%;
+  right: 20%;
+  animation-delay: 1s;
+  animation-duration: 8s;
+}
+
+.login-floating-icon.login-icon3 {
+  top: 40%;
+  right: 15%;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.login-floating-icon.login-icon4 {
+  top: 70%;
+  right: 15%;
+  animation-delay: 3s;
+  animation-duration: 9s;
+}
+
+.login-floating-icon.login-icon5 {
+  top: 80%;
+  left: 10%;
+  animation-delay: 4s;
+  animation-duration: 11s;
+}
+
+.login-floating-icon.login-icon6 {
+  bottom: 10% !important;
+  left: 10%;
+  animation-delay: 5s;
+  animation-duration: 7s;
+  font-size: 2.5rem; /* Make it slightly larger */
+  z-index: 10; /* Ensure it's on top */
+}
+
+@keyframes loginFloatIcon {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-15px) rotate(5deg) scale(1.1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-3deg) scale(0.95);
+  }
+  75% {
+    transform: translateY(-12px) rotate(7deg) scale(1.05);
+  }
+}

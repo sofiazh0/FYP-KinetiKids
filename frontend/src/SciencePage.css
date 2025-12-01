@@ -1,0 +1,106 @@
+/* Science Page Layout */
+.science-page {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 8%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+.heading-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #f4b41a;
+    font-size: 1.6rem;
+}
+/* Grade Section */
+.grade-section {
+    margin: 40px 0;
+}
+
+/* .grade-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2b6599;
+} */
+
+.grade-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: white;
+    padding: 10px 20px; /* Adds space inside the border */
+    /* border: 2px solid #2b6599; Border color matching your theme */
+    border-radius: 12px; /*Rounded corners for the button effect*/
+    display: inline-block; /* Makes the element behave like a button */
+    background-color: #2b6599; /* Optional: You can add a background color for more button-like effect */
+    text-align: center; /* Centers the text inside */
+    /* transition: all 0.3s ease; Smooth transition for hover effect */
+}
+
+/* Video Slider */
+.video-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* padding-bottom: 20px; */
+    background:  #91c5eb ; /* Slider background with two colors */
+    border-radius: 10px;
+    padding: 10px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+
+/* Video Card */
+.video-card {
+    flex: 0 0 auto;
+    width: 250px;
+    text-align: center;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+    background-color: #2b6599; /* Keeping the card background white */
+    border-radius: 8px; /* Added to smooth the card edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Box shadow for card */
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+.video-thumbnail {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.video-card h3 {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Custom Scrollbar */
+.video-slider::-webkit-scrollbar {
+    height: 10px; /* Height of the scrollbar */
+}
+
+.video-slider::-webkit-scrollbar-thumb {
+    background-color: #f4b41a; /* Thumb color */
+    border-radius: 10px; /* Round edges of the thumb */
+}
+
+.video-slider::-webkit-scrollbar-track {
+    background-color: #2b6599; /* Track color */
+    border-radius: 10px; /* Round edges of the track */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .video-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+    .video-card {
+        width: 80%;
+    }
+}

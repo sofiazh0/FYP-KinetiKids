@@ -1,0 +1,229 @@
+/* Importing Montserrat font globally */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/* Global styling for body */
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar container styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 13vh;
+  padding: 0 2vw;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* Menu icon positioning - move to right */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  order: 2; /* Move hamburger to right side */
+  margin-right: 0;
+}
+
+/* Logo styling - on left side */
+.navbar-logo {
+  order: 1; /* Move logo to left side */
+  margin-left: 0;
+  margin-right: auto; /* Push everything else to the right */
+}
+
+.navbar-logo img {
+  height: 8vh;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+/* Menu icon for all screen sizes */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px; /* Adjust margin if needed */
+}
+
+.menu-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #2b6599; /* Blue color for the hamburger menu */
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Open state transformations for the hamburger menu */
+.menu-bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #f7fbfe;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  flex-direction: column;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+/* Sidebar Close Button (X) */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #2b6599;
+}
+
+.close-btn:hover {
+  color: #f4b41a; /* Hover effect */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: #2b6599;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  color: #f4b41a;
+}
+
+/* Navbar links styling */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin-left: auto; /* This will push the nav-links to the right */
+  flex-direction: row; /* Ensure links are aligned horizontally on larger screens */
+  align-items: center; /* Align them vertically */
+}
+
+.nav-links.nav-active {
+  left: 0;
+}
+
+/* Individual link items */
+.nav-links li {
+  margin-left: 20px;
+}
+
+/* Link styling */
+.nav-links a {
+  color: #2b6599;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 8px 13px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+/* Hover effect: box with rounded corners and white text */
+.nav-links a:hover {
+  /* background-color: #2b6599;  */
+  color: white; /* Text color on hover */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Media Queries - Remove unnecessary code as hamburger is always visible */
+@media (min-width: 768px) {
+  /* Navbar links styling for larger screens */
+  .nav-links {
+    flex-direction: row;
+    position: static;
+    height: auto;
+    background-color: transparent;
+    left: auto;
+    display: flex; /* Ensure the nav links are displayed on larger screens */
+  }
+
+  /* Show the menu icon on all screens */
+  .menu-icon {
+    display: flex; /* Visible on all screens */
+  }
+}
+
+/* Sidebar (Mobile Menu) adjustments for mobile screens */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -100%;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+}
+
+/* Global styles for disabled links */
+.nav-links a.disabled,
+.sidebar ul li a.disabled {
+  color: #ccc; /* Light grey color for disabled links */
+  cursor: not-allowed; /* Change cursor to 'not-allowed' */
+  pointer-events: none; /* Prevent clicking */
+}
+
+/* Add custom cursor style when hovered */
+.nav-links a.disabled:hover,
+.sidebar ul li a.disabled:hover {
+  cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"%3E%3Ccircle cx="16" cy="16" r="14" fill="%23FF0000" stroke="%23FFFFFF" stroke-width="4" /%3E%3Ctext x="16" y="19" font-size="14" text-anchor="middle" fill="%23FFFFFF" font-family="Arial" font-weight="bold"%3E🚫%3C/text%3E%3C/svg%3E')
+      16 16,
+    not-allowed; /* Custom 🚫 cursor */
+}
+
+/* Tooltip for disabled buttons (on hover) */
+.nav-links a.disabled:hover::after,
+.sidebar ul li a.disabled:hover::after {
+  content: "Login First"; /* Show tooltip text */
+  position: absolute;
+  background-color: #2b6599;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 9999;
+}

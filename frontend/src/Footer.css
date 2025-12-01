@@ -1,0 +1,18 @@
+/* Footer Styling */
+.footer {
+    position: relative; /* Ensures the footer stays at the bottom */
+    bottom: 0;
+    width: 100%;
+    background-color: #2b6599; /* Background color */
+    color: white; /* Text color */
+    text-align: left;
+    padding: 0% 0%; /* Padding for top and bottom */
+    margin-top: auto; /* Pushes footer to the bottom of the page */
+    font-size: 0.9rem; /* Text size */
+  }
+
+  .footer p {
+    padding-left: 4%; /* Add padding to the text */
+}
+
+  
